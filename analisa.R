@@ -21,7 +21,7 @@ pre_tent <- read_csv(INPUT)
 
 colnames(pre_tent) <- tolower(colnames(pre_tent))
 
-# pre_tent <- pre_tent %>% filter(confidence >= 90)
+pre_tent <- pre_tent %>% filter(confidence >= MIN_CONFIDENCE)
 
 any(duplicated(pre_tent$`cpf@ldap`))
 any(duplicated(pre_tent$`pef_nu_cpf@ufbadb`))
