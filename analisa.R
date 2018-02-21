@@ -14,6 +14,11 @@ any(duplicated(ufba$pef_nu_cpf))
 any(is.na(ufba$pes_nm_pessoa))
 any(is.na(ldap$displayName))
 
+ufba <- ufba %>%
+  mutate(pes_nm_pessoa = toupper(pes_nm_pessoa))
+ldap <- ldap %>%
+  mutate(displayName = toupper(displayName))
+
 # pre_tent <- read_csv('tent2/jaro_winkler-4_0.1.csv')
 # pre_tent <- read_csv('tent2/EditDistance_a0_p1_acc75.csv')
 # pre_tent <- read_csv('tent2/EditDistance_a0_p1_acc80.csv')
